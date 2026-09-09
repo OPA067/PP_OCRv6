@@ -1,0 +1,14 @@
+# PP-OCRv6 OCR 推理
+paddleocr>=2.10.0
+onnxruntime>=1.16.0
+
+# RKNN 模型转换（PC 端 x86_64，可选）
+# rknn-toolkit2
+
+# 常用依赖
+numpy
+pillow
+opencv-python
+
+# 可选：用于构建标定数据集
+# tqdm

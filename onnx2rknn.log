@@ -1,0 +1,198 @@
+(envName) xd04314@SZ2072D:/home/rk3588/PP-OCRv6$ python onnx2rknn.py
+
+==================================================
+  Converting: det
+  ONNX:  /home/rk3588/PP-OCRv6/models/official_models/PP-OCRv6_medium_det_onnx/inference.onnx
+  Output: /home/rk3588/PP-OCRv6/models/rknn/det.rknn
+  Quant:  False
+==================================================
+/home/miniconda3/envs/envName/lib/python3.12/site-packages/rknn/api/rknn.py:51: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  self.rknn_base = RKNNBase(cur_path, verbose)
+I rknn-toolkit2 version: 2.3.2
+-- Configuring det...
+W config: Please make sure the model can be dynamic when enable 'config.dynamic_input'!
+I The 'dynamic_input' function has been enabled, the MaxShape is dynamic_input[1] = [[1, 3, 640, 640]]!
+          The following functions are subject to the MaxShape:
+            1. The quantified dataset needs to be configured according to MaxShape
+            2. The eval_perf or eval_memory return the results of MaxShape
+-- Loading det...
+I Loading : 100%|██████████████████████████████████████████████| 226/226 [00:00<00:00, 18454.81it/s]
+W load_onnx: The config.mean_values is None, zeros will be set for input 0!
+W load_onnx: The config.std_values is None, ones will be set for input 0!
+-- Building det...
+W build: The dataset='' is ignored because do_quantization = False!
+I OpFusing 0: 100%|██████████████████████████████████████████████| 100/100 [00:00<00:00, 790.19it/s]
+I OpFusing 1 :   0%|                                                        | 0/100 [00:00<?, ?it/s]W build: The 'dynamic_input' function is enabled, disable _p_convert_maxpool_to_maxpool_tile!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 662.63it/s]
+I OpFusing 2 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 643.15it/s]
+I rknn building ...
+E RKNN: [09:55:08.230] Unkown op target: 0
+E RKNN: [09:55:08.242] Unkown op target: 0
+E RKNN: [09:55:08.256] Unkown op target: 0
+E RKNN: [09:55:08.260] Unkown op target: 0
+E RKNN: [09:55:08.264] Unkown op target: 0
+E RKNN: [09:55:08.841] Unkown op target: 0
+E RKNN: [09:55:08.844] Unkown op target: 0
+E RKNN: [09:55:08.848] Unkown op target: 0
+E RKNN: [09:55:08.849] Unkown op target: 0
+E RKNN: [09:55:08.851] Unkown op target: 0
+I rknn building done.
+-- Exporting det...
+-- det done -> /home/rk3588/PP-OCRv6/models/rknn/det.rknn
+
+==================================================
+  Converting: cls
+  ONNX:  /home/rk3588/PP-OCRv6/models/official_models/PP-LCNet_x1_0_textline_ori_onnx/inference.onnx
+  Output: /home/rk3588/PP-OCRv6/models/rknn/cls.rknn
+  Quant:  False
+==================================================
+I rknn-toolkit2 version: 2.3.2
+-- Configuring cls...
+-- Loading cls...
+W load_onnx: If you don't need to crop the model, don't set 'inputs'/'input_size_list'/'outputs'!
+W load_onnx: The config.mean_values is None, zeros will be set for input 0!
+W load_onnx: The config.std_values is None, ones will be set for input 0!
+-- Building cls...
+W build: The dataset='' is ignored because do_quantization = False!
+I Loading : 100%|█████████████████████████████████████████████| 155/155 [00:00<00:00, 130781.96it/s]
+I OpFusing 0: 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 2811.25it/s]
+I OpFusing 1 : 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 1227.70it/s]
+I OpFusing 0 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 621.75it/s]
+I OpFusing 1 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 585.22it/s]
+I OpFusing 2 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 552.02it/s]
+I OpFusing 0 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 533.04it/s]
+I OpFusing 1 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 513.33it/s]
+I OpFusing 2 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 393.15it/s]
+I rknn building ...
+E RKNN: [09:55:10.933] Unkown op target: 0
+I rknn building done.
+-- Exporting cls...
+-- cls done -> /home/rk3588/PP-OCRv6/models/rknn/cls.rknn
+
+==================================================
+  Converting: rec
+  ONNX:  /home/rk3588/PP-OCRv6/models/official_models/PP-OCRv6_medium_rec_onnx/inference.onnx
+  Output: /home/rk3588/PP-OCRv6/models/rknn/rec.rknn
+  Quant:  False
+==================================================
+I rknn-toolkit2 version: 2.3.2
+-- Configuring rec...
+W config: Please make sure the model can be dynamic when enable 'config.dynamic_input'!
+I The 'dynamic_input' function has been enabled, the MaxShape is dynamic_input[2] = [[1, 3, 48, 640]]!
+          The following functions are subject to the MaxShape:
+            1. The quantified dataset needs to be configured according to MaxShape
+            2. The eval_perf or eval_memory return the results of MaxShape
+-- Loading rec...
+I Loading : 100%|██████████████████████████████████████████████| 254/254 [00:00<00:00, 15683.80it/s]
+W load_onnx: The config.mean_values is None, zeros will be set for input 0!
+W load_onnx: The config.std_values is None, ones will be set for input 0!
+-- Building rec...
+W build: The dataset='' is ignored because do_quantization = False!
+I OpFusing 0: 100%|██████████████████████████████████████████████| 100/100 [00:00<00:00, 446.45it/s]
+I OpFusing 1 :   1%|▍                                               | 1/100 [00:00<00:22,  4.43it/s]W build: The 'dynamic_input' function is enabled, disable _p_convert_maxpool_to_maxpool_tile!
+I OpFusing 1 :   3%|█▍                                              | 3/100 [00:00<00:07, 13.21it/s]W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 :  10%|████▋                                          | 10/100 [00:00<00:02, 43.10it/s]W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 :  15%|███████                                        | 15/100 [00:00<00:01, 63.48it/s]W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 :  22%|██████████▎                                    | 22/100 [00:00<00:00, 91.11it/s]W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 :  29%|█████████████▎                                | 29/100 [00:00<00:00, 117.55it/s]W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 :  39%|█████████████████▉                            | 39/100 [00:00<00:00, 154.39it/s]W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 :  99%|█████████████████████████████████████████████▌| 99/100 [00:00<00:00, 365.85it/s]W build: The 'dynamic_input' function is enabled, disable _p_convert_maxpool_to_maxpool_tile!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 :  99%|█████████████████████████████████████████████▌| 99/100 [00:00<00:00, 270.76it/s]W build: The 'dynamic_input' function is enabled, disable _p_convert_maxpool_to_maxpool_tile!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 :  90%|█████████████████████████████████████████▍    | 90/100 [00:00<00:00, 196.50it/s]W build: The 'dynamic_input' function is enabled, disable _p_convert_maxpool_to_maxpool_tile!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 184.06it/s]
+I OpFusing 0 : 100%|█████████████████████████████████████████████| 100/100 [00:00<00:00, 101.06it/s]
+I OpFusing 1 :   0%|                                                        | 0/100 [00:00<?, ?it/s]W build: The 'dynamic_input' function is enabled, disable _p_convert_maxpool_to_maxpool_tile!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 : 100%|██████████████████████████████████████████████| 100/100 [00:01<00:00, 99.22it/s]
+I OpFusing 2 : 100%|██████████████████████████████████████████████| 100/100 [00:01<00:00, 94.60it/s]
+I OpFusing 0 : 100%|██████████████████████████████████████████████| 100/100 [00:01<00:00, 83.44it/s]
+I OpFusing 1 :   0%|                                                        | 0/100 [00:01<?, ?it/s]W build: The 'dynamic_input' function is enabled, disable _p_convert_maxpool_to_maxpool_tile!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+W build: The 'dynamic_input' function is enabled, disable convert_accumulate_op_to_einsum!
+I OpFusing 1 : 100%|██████████████████████████████████████████████| 100/100 [00:01<00:00, 82.25it/s]
+I OpFusing 2 : 100%|██████████████████████████████████████████████| 100/100 [00:01<00:00, 82.00it/s]
+I OpFusing 0: 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 11428.62it/s]
+I OpFusing 1 : 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 6730.05it/s]
+I OpFusing 2 : 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 6112.27it/s]
+I OpFusing 0: 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 11206.93it/s]
+I OpFusing 1 : 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 7399.84it/s]
+I OpFusing 2 : 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 6810.48it/s]
+I OpFusing 0: 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 12785.56it/s]
+I OpFusing 1 : 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 7900.81it/s]
+I OpFusing 2 : 100%|████████████████████████████████████████████| 100/100 [00:00<00:00, 7208.57it/s]
+I rknn building ...
+E RKNN: [09:55:16.281] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.281] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.281] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.281] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.318] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.472] Unkown op target: 0
+E RKNN: [09:55:16.476] Unkown op target: 0
+E RKNN: [09:55:16.479] Unkown op target: 0
+E RKNN: [09:55:16.482] Unkown op target: 0
+E RKNN: [09:55:16.485] Unkown op target: 0
+E RKNN: [09:55:16.489] Unkown op target: 0
+E RKNN: [09:55:16.719] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.719] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.719] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.719] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.743] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:16.898] Unkown op target: 0
+E RKNN: [09:55:16.900] Unkown op target: 0
+E RKNN: [09:55:16.902] Unkown op target: 0
+E RKNN: [09:55:16.903] Unkown op target: 0
+E RKNN: [09:55:16.905] Unkown op target: 0
+E RKNN: [09:55:16.908] Unkown op target: 0
+E RKNN: [09:55:17.166] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:17.166] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:17.166] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:17.166] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:17.184] channel is too large, may produce thousands of regtask, fallback to cpu!
+E RKNN: [09:55:17.338] Unkown op target: 0
+E RKNN: [09:55:17.339] Unkown op target: 0
+E RKNN: [09:55:17.340] Unkown op target: 0
+E RKNN: [09:55:17.341] Unkown op target: 0
+E RKNN: [09:55:17.342] Unkown op target: 0
+E RKNN: [09:55:17.344] Unkown op target: 0
+I rknn building done.
+-- Exporting rec...
+-- rec done -> /home/rk3588/PP-OCRv6/models/rknn/rec.rknn
+
+==================================================
+  Results:
+    det: OK
+    cls: OK
+    rec: OK
+==================================================

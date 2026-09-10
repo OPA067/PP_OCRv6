@@ -29,15 +29,15 @@ Two runtime modes are supported:
 
 ## 🖼️ Inference Demo
 
-Full benchmark gallery — **left = 原图 (`benchmark/`)**, **right = 识别结果 (`output/`)**.
+Full benchmark gallery — **left = input (`benchmark/`)**, **right = result (`output/`)**.
 The right-hand image is the visualisation written by `ocr_infer.py`: colored boxes are the detected
 text regions, and each box is labeled with the recognized text and its confidence score.
 
-### Group A · 基础文本 (a1–a10)
+### Group A · Basic Text (a1–a10)
 
 Short, single-line inputs — ASCII, digits/symbols, CJK, and rotated text.
 
-| 输入 (`benchmark/`) | 识别结果 (`output/`) |
+| Input (`benchmark/`) | Result (`output/`) |
 |:---:|:---:|
 | <img src="benchmark/a1.png" width="380"><br><sub><b>a1.png</b> · `Hello World!` · 0.9974</sub> | <img src="output/a1_ocr_res_img.png" width="380"> |
 | <img src="benchmark/a2.png" width="380"><br><sub><b>a2.png</b> · `123/qaz/PLM/!@#` · 1.0000</sub> | <img src="output/a2_ocr_res_img.png" width="380"> |
@@ -46,41 +46,41 @@ Short, single-line inputs — ASCII, digits/symbols, CJK, and rotated text.
 | <img src="benchmark/a5.png" width="380"><br><sub><b>a5.png</b> · `benchmark - 基准常见释义` · 0.9779</sub> | <img src="output/a5_ocr_res_img.png" width="380"> |
 | <img src="benchmark/a6.png" width="380"><br><sub><b>a6.png</b> · `上海市公安局徐汇分局` · 1.0000</sub> | <img src="output/a6_ocr_res_img.png" width="380"> |
 | <img src="benchmark/a7.png" width="380"><br><sub><b>a7.png</b> · `任意分辨率都高性能` · 0.9999</sub> | <img src="output/a7_ocr_res_img.png" width="380"> |
-| <img src="benchmark/a8.png" width="380"><br><sub><b>a8.png</b> · `现在你的代码状态` · 0.9999 · 倒置输入，cls 自动矫正</sub> | <img src="output/a8_ocr_res_img.png" width="380"> |
+| <img src="benchmark/a8.png" width="380"><br><sub><b>a8.png</b> · `现在你的代码状态` · 0.9999 · upside-down input, auto-corrected by `cls`</sub> | <img src="output/a8_ocr_res_img.png" width="380"> |
 | <img src="benchmark/a9.png" width="380"><br><sub><b>a9.png</b> · `百度Ai+百度Ai+` · 0.9818</sub> | <img src="output/a9_ocr_res_img.png" width="380"> |
 | <img src="benchmark/a10.png" width="380"><br><sub><b>a10.png</b> · `电子健康码` · 1.0000</sub> | <img src="output/a10_ocr_res_img.png" width="380"> |
 
-### Group B · 真实文档 / 截图 (b1–b10)
+### Group B · Real-world Documents & Screenshots (b1–b10)
 
 Real-world material — UI screenshots, news lists, long paragraphs, ID card, passport, shell output.
 
-| 输入 (`benchmark/`) | 识别结果 (`output/`) |
+| Input (`benchmark/`) | Result (`output/`) |
 |:---:|:---:|
 | <img src="benchmark/b1.png" width="380"><br><sub><b>b1.png</b> · `PaddleOCR3.0` · `文字识别与文档解析开发套件`</sub> | <img src="output/b1_ocr_res_img.png" width="380"> |
 | <img src="benchmark/b2.png" width="380"><br><sub><b>b2.png</b> · `第一次：det → cls → rec` · `第二次：det → cls → rec`</sub> | <img src="output/b2_ocr_res_img.png" width="380"> |
 | <img src="benchmark/b3.png" width="380"><br><sub><b>b3.png</b> · `输入 (命中缓存) Token` / `输入 (未命中缓存) Token` / `输出 Token`</sub> | <img src="output/b3_ocr_res_img.png" width="380"> |
-| <img src="benchmark/b4.png" width="380"><br><sub><b>b4.png</b> · 学术段落 6 行（`动机与研究意义` …），逐行识别</sub> | <img src="output/b4_ocr_res_img.png" width="380"> |
-| <img src="benchmark/b5.png" width="380"><br><sub><b>b5.png</b> · `长文本模型能处理多长的内容` + 3 行长段落</sub> | <img src="output/b5_ocr_res_img.png" width="380"> |
-| <img src="benchmark/b6.png" width="380"><br><sub><b>b6.png</b> · 新闻热搜列表 5 条（`1 铜价"爆了"热` …）</sub> | <img src="output/b6_ocr_res_img.png" width="380"> |
-| <img src="benchmark/b7.png" width="380"><br><sub><b>b7.png</b> · `Quick Start` + `Step 0`–`Step 4` 共 6 行</sub> | <img src="output/b7_ocr_res_img.png" width="380"> |
-| <img src="benchmark/b8.png" width="380"><br><sub><b>b8.png</b> · 身份证：`中华人民共和国` · `居民身份证` · `签发机关上海市公安局徐汇分局` · `有效期限 2005.10.08-2025.10.08`</sub> | <img src="output/b8_ocr_res_img.png" width="380"> |
-| <img src="benchmark/b9.png" width="380"><br><sub><b>b9.png</b> · shell 脚本：`sudo watch -n 0.5` · `echo "===== NPU ====="` · `cat /sys/kernel/debug/rknpu/load` · `cat /sys/class/devfreq/fdab0000.npu/cur_freq`</sub> | <img src="output/b9_ocr_res_img.png" width="380"> |
-| <img src="benchmark/b10.jpg" width="380"><br><sub><b>b10.jpg</b> · 护照：`中华人民共和国` · `护照 PASSPORT` · `姓名/Name` · `签发机关/Authority` …（MRZ 也识别出 `POCHNFENG<<`）</sub> | <img src="output/b10_ocr_res_img.jpg" width="380"> |
+| <img src="benchmark/b4.png" width="380"><br><sub><b>b4.png</b> · 6-line academic paragraph (`动机与研究意义` …), recognized line by line</sub> | <img src="output/b4_ocr_res_img.png" width="380"> |
+| <img src="benchmark/b5.png" width="380"><br><sub><b>b5.png</b> · `长文本模型能处理多长的内容` + 3-line paragraph</sub> | <img src="output/b5_ocr_res_img.png" width="380"> |
+| <img src="benchmark/b6.png" width="380"><br><sub><b>b6.png</b> · 5 news headlines (`1 铜价"爆了"热` …)</sub> | <img src="output/b6_ocr_res_img.png" width="380"> |
+| <img src="benchmark/b7.png" width="380"><br><sub><b>b7.png</b> · `Quick Start` + `Step 0`–`Step 4`, 6 lines</sub> | <img src="output/b7_ocr_res_img.png" width="380"> |
+| <img src="benchmark/b8.png" width="380"><br><sub><b>b8.png</b> · ID card: `中华人民共和国` · `居民身份证` · `签发机关上海市公安局徐汇分局` · `有效期限 2005.10.08-2025.10.08`</sub> | <img src="output/b8_ocr_res_img.png" width="380"> |
+| <img src="benchmark/b9.png" width="380"><br><sub><b>b9.png</b> · shell script: `sudo watch -n 0.5` · `echo "===== NPU ====="` · `cat /sys/kernel/debug/rknpu/load` · `cat /sys/class/devfreq/fdab0000.npu/cur_freq`</sub> | <img src="output/b9_ocr_res_img.png" width="380"> |
+| <img src="benchmark/b10.jpg" width="380"><br><sub><b>b10.jpg</b> · passport: `中华人民共和国` · `护照 PASSPORT` · `姓名/Name` · `签发机关/Authority` … (MRZ read as `POCHNFENG<<`)</sub> | <img src="output/b10_ocr_res_img.jpg" width="380"> |
 
-### Group C · 大字号 / 复杂版式 (c1–c9)
+### Group C · Large Type & Complex Layouts (c1–c9)
 
 Large display type, multi-line layouts, rotation and partial occlusion.
 
-| 输入 (`benchmark/`) | 识别结果 (`output/`) |
+| Input (`benchmark/`) | Result (`output/`) |
 |:---:|:---:|
 | <img src="benchmark/c1.png" width="380"><br><sub><b>c1.png</b> · `PP` · `OCRv6 →` · `RKNN`</sub> | <img src="output/c1_ocr_res_img.png" width="380"> |
 | <img src="benchmark/c2.png" width="380"><br><sub><b>c2.png</b> · `受约束的动态 Shape` · 0.9709</sub> | <img src="output/c2_ocr_res_img.png" width="380"> |
 | <img src="benchmark/c3.png" width="380"><br><sub><b>c3.png</b> · `任意分辨率` · `都高性能` · `受约束的动态 Shape`</sub> | <img src="output/c3_ocr_res_img.png" width="380"> |
-| <img src="benchmark/c4.png" width="380"><br><sub><b>c4.png</b> · `意分辨率都高性能` · `受约束的动态 Shape`（首字被裁切）</sub> | <img src="output/c4_ocr_res_img.png" width="380"> |
-| <img src="benchmark/c5.png" width="380"><br><sub><b>c5.png</b> · `任意分` · `态 Shape` · 旋转 + 遮挡下的部分召回</sub> | <img src="output/c5_ocr_res_img.png" width="380"> |
+| <img src="benchmark/c4.png" width="380"><br><sub><b>c4.png</b> · `意分辨率都高性能` · `受约束的动态 Shape` (first char clipped)</sub> | <img src="output/c4_ocr_res_img.png" width="380"> |
+| <img src="benchmark/c5.png" width="380"><br><sub><b>c5.png</b> · `任意分` · `态 Shape` · partial recall under rotation + occlusion</sub> | <img src="output/c5_ocr_res_img.png" width="380"> |
 | <img src="benchmark/c6.png" width="380"><br><sub><b>c6.png</b> · `RKNN为什么不能直接` · `吃原始分辨率`</sub> | <img src="output/c6_ocr_res_img.png" width="380"> |
-| <img src="benchmark/c7.png" width="380"><br><sub><b>c7.png</b> · `RKNN为什么不能直接` · `吃原始分辨率`（旋转版）</sub> | <img src="output/c7_ocr_res_img.png" width="380"> |
-| <img src="benchmark/c8.png" width="380"><br><sub><b>c8.png</b> · 英文 7 行：`RKNN supports dynamic input` · `shapes, but its dynamic-resolution` · `support is constrained and does not` …</sub> | <img src="output/c8_ocr_res_img.png" width="380"> |
+| <img src="benchmark/c7.png" width="380"><br><sub><b>c7.png</b> · `RKNN为什么不能直接` · `吃原始分辨率` (rotated variant)</sub> | <img src="output/c7_ocr_res_img.png" width="380"> |
+| <img src="benchmark/c8.png" width="380"><br><sub><b>c8.png</b> · 7 English lines: `RKNN supports dynamic input` · `shapes, but its dynamic-resolution` · `support is constrained and does not` …</sub> | <img src="output/c8_ocr_res_img.png" width="380"> |
 | <img src="benchmark/c9.png" width="380"><br><sub><b>c9.png</b> · `最小10×10像素，且需要3通道图像` · `123，ABCDEF`</sub> | <img src="output/c9_ocr_res_img.png" width="380"> |
 
 > **Note:** Confidence values come from a single run of `python ocr_infer.py`; see `ocr_infer.log` for the raw

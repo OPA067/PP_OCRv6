@@ -1,19 +1,24 @@
-(envName) xd04314@SZ2072D:/home/rk3588/PP-OCRv6$ python ocr_infer.py
+(envName) xd04314@SZ2072D:/home/rk3588/PP-OCRv6$ python ocr_infer.py 
 Creating model: ('PP-LCNet_x1_0_textline_ori', '/home/rk3588/PP-OCRv6/models/official_models/PP-LCNet_x1_0_textline_ori_onnx', 'onnxruntime')
-2026-09-09 10:11:33.021141498 [W:onnxruntime:, graph.cc:5337 CleanUnusedInitializersAndNodeArgs] Removing initializer 'p2o.pd_op.full.0.0'. It is not used by any node and should be removed from the model.
-2026-09-09 10:11:33.021180791 [W:onnxruntime:, graph.cc:5337 CleanUnusedInitializersAndNodeArgs] Removing initializer 'p2o.pd_op.full_int_array.6.0'. It is not used by any node and should be removed from the model.
-2026-09-09 10:11:33.021197074 [W:onnxruntime:, graph.cc:5337 CleanUnusedInitializersAndNodeArgs] Removing initializer 'p2o.pd_op.full_int_array.3.0'. It is not used by any node and should be removed from the model.
-2026-09-09 10:11:33.021210922 [W:onnxruntime:, graph.cc:5337 CleanUnusedInitializersAndNodeArgs] Removing initializer 'p2o.pd_op.full_int_array.0.0'. It is not used by any node and should be removed from the model.
+2026-09-10 15:56:52.592623007 [W:onnxruntime:, graph.cc:5337 CleanUnusedInitializersAndNodeArgs] Removing initializer 'p2o.pd_op.full.0.0'. It is not used by any node and should be removed from the model.
+2026-09-10 15:56:52.593046320 [W:onnxruntime:, graph.cc:5337 CleanUnusedInitializersAndNodeArgs] Removing initializer 'p2o.pd_op.full_int_array.6.0'. It is not used by any node and should be removed from the model.
+2026-09-10 15:56:52.593050933 [W:onnxruntime:, graph.cc:5337 CleanUnusedInitializersAndNodeArgs] Removing initializer 'p2o.pd_op.full_int_array.3.0'. It is not used by any node and should be removed from the model.
+2026-09-10 15:56:52.593053741 [W:onnxruntime:, graph.cc:5337 CleanUnusedInitializersAndNodeArgs] Removing initializer 'p2o.pd_op.full_int_array.0.0'. It is not used by any node and should be removed from the model.
 Creating model: ('PP-OCRv6_medium_det', '/home/rk3588/PP-OCRv6/models/official_models/PP-OCRv6_medium_det_onnx', 'onnxruntime')
 Creating model: ('PP-OCRv6_medium_rec', '/home/rk3588/PP-OCRv6/models/official_models/PP-OCRv6_medium_rec_onnx', 'onnxruntime')
 文件名: benchmark/a1.png
-采样时间: 0.2029s
+采样时间: 0.2457s
   文本: Hello World!, 坐标: [25 ... 81], 置信度: 0.9974
 
-共 20 张图片，开始循环识别...
+共 29 张图片，开始循环识别...
+
+文件名: c6.png
+采样时间: 0.6146s
+  文本: RKNN为什么不能直接, 坐标: [ 22 ... 393], 置信度: 1.0000
+  文本: 吃原始分辨率, 坐标: [164 ... 264], 置信度: 0.9998
 
 文件名: b9.png
-采样时间: 1.0365s
+采样时间: 1.0408s
   文本: sudo watch -n 0.5, 坐标: [ 1 ... 26], 置信度: 0.9951
   文本: echo "===== NPU =====", 坐标: [ 0 ... 62], 置信度: 0.9624
   文本: cat /sys/kernel/debug/rknpu/load, 坐标: [ 0 ... 99], 置信度: 0.9957
@@ -21,59 +26,51 @@ Creating model: ('PP-OCRv6_medium_rec', '/home/rk3588/PP-OCRv6/models/official_m
   文本: cat /sys/class/devfreq/fdab0000.npu/cur_freq, 坐标: [  0 ... 170], 置信度: 0.9984
 
 文件名: a6.png
-采样时间: 0.1965s
+采样时间: 0.1894s
   文本: 上海市公安局徐汇分局, 坐标: [ 4 ... 41], 置信度: 1.0000
 
-文件名: b10.png
-采样时间: 8.2087s
-  文本: JAPAN VISA, 坐标: [700 ... 294], 置信度: 0.9974
-  文本: 日出国尚吧, 坐标: [689 ... 416], 置信度: 0.6086
-  文本: EC6835088, 坐标: [2429 ...  444], 置信度: 1.0000
-  文本: Place ofissue, 坐标: [978 ... 543], 置信度: 0.9923
-  文本: Date of issue, 坐标: [1738 ...  550], 置信度: 0.9997
-  文本: Date of expiry, 坐标: [2349 ...  567], 置信度: 0.9772
-  文本: SHANGHAI, 坐标: [985 ... 609], 置信度: 0.9999
-  文本: 16 DEC 19, 坐标: [1733 ...  618], 置信度: 0.9975
-  文本: 16 MAR 20, 坐标: [2350 ...  629], 置信度: 0.9952
-  文本: No.of entries, 坐标: [971 ... 694], 置信度: 0.9982
-  文本: Issue No, 坐标: [1524 ...  698], 置信度: 0.9993
-  文本: For stay(s) of, 坐标: [2098 ...  711], 置信度: 0.9991
-  文本: SINGLE, 坐标: [977 ... 763], 置信度: 1.0000
-  文本: 19X57038, 坐标: [1532 ...  769], 置信度: 0.9984
-  文本: 15 DAYS, 坐标: [2110 ...  775], 置信度: 0.9343
-  文本: Category, 坐标: [966 ... 853], 置信度: 1.0000
-  文本: (VAS TEMPORARY VISITOR, 坐标: [983 ... 923], 置信度: 0.9871
-  文本: Surname/Given name, 坐标: [ 965 ... 1006], 置信度: 0.9988
-  文本: GUO NING, 坐标: [ 971 ... 1073], 置信度: 0.9395
-  文本: Passport No, 坐标: [ 962 ... 1156], 置信度: 0.9998
-  文本: Sex, 坐标: [1454 ... 1164], 置信度: 1.0000
-  文本: Date of birth, 坐标: [1645 ... 1160], 置信度: 1.0000
-  文本: Nationality, 坐标: [2126 ... 1170], 置信度: 1.0000
-  文本: No.of app!, 坐标: [2462 ... 1167], 置信度: 0.8740
-  文本: PE1537931, 坐标: [ 965 ... 1228], 置信度: 1.0000
-  文本: 27 DEC 82 CHN, 坐标: [1647 ... 1240], 置信度: 0.9607
-  文本: F, 坐标: [1462 ... 1220], 置信度: 0.9976
-  文本: Remarks, 坐标: [ 955 ... 1315], 置信度: 1.0000
-  文本: V<JPNGUO<<NING<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<, 坐标: [ 158 ... 1585], 置信度: 0.8365
-  文本: PE15379312CHN8212270F200316419X57038619D<V13, 坐标: [ 143 ... 1748], 置信度: 0.9996
-
 文件名: b7.png
-采样时间: 1.7010s
-  文本: PaddleOCR自发布以来凭借学术前沿算法和产业落地实践，受到了产学研各方的喜爱，并被广泛应用干众多知名开源项目，例如：Umi-OCR、OmniParser、MinerU、, 坐标: [ 6 ... 22], 置信度: 0.9907
-  文本: RAGFlow等，已成为广大开发者心中的开源OCR领域的首选工具。2025年5月20日，飞桨团队发布PaddIeOCR3.0，全面适配飞桨框架3.0正式版，进一步提升文字识别精, 坐标: [ 8 ... 49], 置信度: 0.9844
-  文本: 度，支持多文字类型识别和手写体识别，满足大模型应用对复杂文档高精度解析的旺盛需求，结合文心大模型4.5显著提升关键信息抽取精度，并新增对昆仑芯、昇腾等, 坐标: [ 9 ... 77], 置信度: 0.9998
-  文本: 国产硬件的支持。, 坐标: [  7 ... 107], 置信度: 0.9999
+采样时间: 0.8798s
+  文本: Quick Start, 坐标: [ 0 ... 21], 置信度: 0.9999
+  文本: Step 0: Set Environment Variables, 坐标: [ 1 ... 49], 置信度: 0.9858
+  文本: Step 1: Prerequisites Check, 坐标: [ 0 ... 77], 置信度: 0.9992
+  文本: Step 2: Build, 坐标: [  0 ... 107], 置信度: 0.9975
+  文本: Step 3: Run Tests, 坐标: [  0 ... 133], 置信度: 0.9992
+  文本: Step 4: Integrate into Your Own Program, 坐标: [  0 ... 162], 置信度: 1.0000
+
+文件名: c4.png
+采样时间: 0.4682s
+  文本: 意分辨率都高性能, 坐标: [244 ... 523], 置信度: 1.0000
+  文本: 受约束的动态 Shape, 坐标: [ 53 ... 391], 置信度: 0.9705
+
+文件名: c1.png
+采样时间: 0.5846s
+  文本: PP, 坐标: [ 12 ... 110], 置信度: 0.9993
+  文本: OCRv6 →, 坐标: [ 17 ... 234], 置信度: 0.9653
+  文本: RKNN, 坐标: [ 17 ... 360], 置信度: 0.9997
+
+文件名: c9.png
+采样时间: 0.7382s
+  文本: 且需要3通道图像, 坐标: [ 79 ... 100], 置信度: 0.9994
+  文本: 最小10×10像素，, 坐标: [ 33 ... 211], 置信度: 0.9639
+  文本: 123，ABCDEF, 坐标: [211 ... 304], 置信度: 0.9969
 
 文件名: a7.png
-采样时间: 0.4458s
-  文本: Benchmark | Advanced Electronics Engineering & Manufacturing, 坐标: [ 5 ... 27], 置信度: 0.9856
+采样时间: 0.3383s
+  文本: 任意分辨率都高性能, 坐标: [ 10 ... 141], 置信度: 0.9999
 
 文件名: a2.png
-采样时间: 0.2602s
+采样时间: 0.1911s
   文本: 123/qaz/PLM/!@#, 坐标: [ 3 ... 75], 置信度: 1.0000
 
+文件名: c3.png
+采样时间: 0.8762s
+  文本: 任意分辨率, 坐标: [348 ... 421], 置信度: 1.0000
+  文本: 都高性能, 坐标: [332 ... 476], 置信度: 0.9999
+  文本: 受约束的动态 Shape, 坐标: [ 34 ... 387], 置信度: 0.9993
+
 文件名: b8.png
-采样时间: 1.1584s
+采样时间: 1.4807s
   文本: 中华人民共和国, 坐标: [276 ...  98], 置信度: 1.0000
   文本: 居民身份证, 坐标: [240 ... 222], 置信度: 0.9995
   文本: 签发机关上海市公安局徐汇分局, 坐标: [187 ... 428], 置信度: 1.0000
@@ -81,32 +78,51 @@ Creating model: ('PP-OCRv6_medium_rec', '/home/rk3588/PP-OCRv6/models/official_m
   文本: 2005.10.08-2025.10.08, 坐标: [347 ... 501], 置信度: 1.0000
 
 文件名: b2.png
-采样时间: 0.4265s
+采样时间: 0.5263s
   文本: 第一次：, 坐标: [ 6 ... 19], 置信度: 0.9992
   文本: det → cls → rec, 坐标: [ 6 ... 39], 置信度: 0.9566
   文本: 第二次：, 坐标: [ 6 ... 79], 置信度: 0.9994
   文本: det → cls → rec, 坐标: [ 6 ... 99], 置信度: 0.9566
 
+文件名: c2.png
+采样时间: 0.7867s
+  文本: 受约束的动态 Shape, 坐标: [ 52 ... 519], 置信度: 0.9709
+
 文件名: a5.png
-采样时间: 0.4720s
+采样时间: 0.4529s
   文本: benchmark - 基准常见释义, 坐标: [  0 ... 113], 置信度: 0.9779
 
 文件名: b3.png
-采样时间: 0.4179s
+采样时间: 0.5197s
   文本: 输入 (命中缓存) Token, 坐标: [ 8 ... 37], 置信度: 0.9792
   文本: 输入 (未命中缓存) Token, 坐标: [11 ... 79], 置信度: 0.9447
   文本: 输出 Token, 坐标: [  8 ... 124], 置信度: 0.9578
 
 文件名: a4.png
-采样时间: 0.1712s
+采样时间: 0.2850s
   文本: 现在你的代码状态, 坐标: [ 4 ... 30], 置信度: 0.9999
 
 文件名: a10.png
-采样时间: 0.2617s
+采样时间: 0.2643s
   文本: 电子健康码, 坐标: [ 14 ... 111], 置信度: 1.0000
 
+文件名: c5.png
+采样时间: 0.5701s
+  文本: 任意分, 坐标: [ 38 ... 210], 置信度: 0.9999
+  文本: 态 Shape, 坐标: [248 ... 203], 置信度: 0.9888
+
+文件名: c8.png
+采样时间: 1.1682s
+  文本: resolution inference., 坐标: [270 ...  46], 置信度: 0.9994
+  文本: arbitrary-, 坐标: [28 ... 96], 置信度: 0.9999
+  文本: unrestricted, 坐标: [230 ...  96], 置信度: 1.0000
+  文本: provide, 坐标: [467 ...  98], 置信度: 0.9952
+  文本: support is constrained and does not, 坐标: [ 25 ... 145], 置信度: 0.9993
+  文本: shapes, but its dynamic-resolution, 坐标: [ 27 ... 195], 置信度: 1.0000
+  文本: RKNN supports dynamic input, 坐标: [ 23 ... 249], 置信度: 0.9908
+
 文件名: b6.png
-采样时间: 0.9522s
+采样时间: 0.9364s
   文本: 1 铜价“爆了”热, 坐标: [ 1 ... 19], 置信度: 0.9489
   文本: 2 指控4岁男童摸屁股？纠缠式维权该停了, 坐标: [ 1 ... 50], 置信度: 0.9951
   文本: 3 数贸会一大批新技术新产品即将解锁, 坐标: [ 2 ... 81], 置信度: 0.9942
@@ -114,25 +130,25 @@ Creating model: ('PP-OCRv6_medium_rec', '/home/rk3588/PP-OCRv6/models/official_m
   文本: 5 考研圈大地震！顶尖名校陆续停招学硕, 坐标: [  1 ... 146], 置信度: 0.9967
 
 文件名: a3.png
-采样时间: 0.1832s
+采样时间: 0.1691s
   文本: 分享你的观点, 坐标: [11 ... 78], 置信度: 1.0000
 
 文件名: a1.png
-采样时间: 0.2423s
+采样时间: 0.2073s
   文本: Hello World!, 坐标: [25 ... 81], 置信度: 0.9974
 
 文件名: b5.png
-采样时间: 1.0220s
+采样时间: 1.1749s
   文本: 长文本模型能处理多长的内容, 坐标: [ 4 ... 24], 置信度: 0.9999
   文本: ·上下文窗口是硬指标：指模型单次推理能“看见”的最大范围，常见从4K、32K到, 坐标: [ 5 ... 63], 置信度: 0.9913
   文本: 128K甚至百万级token。例如128K上下文大约相当于10万字左右的文本。, 坐标: [22 ... 91], 置信度: 0.9999
 
 文件名: a8.png
-采样时间: 0.3336s
+采样时间: 0.3490s
   文本: 现在你的代码状态, 坐标: [ 35 ... 169], 置信度: 0.9999
 
 文件名: b4.png
-采样时间: 1.9118s
+采样时间: 2.3466s
   文本: 动机与研究意义, 坐标: [ 5 ... 28], 置信度: 0.9999
   文本: 文本连贯性是衡量生成质量的关键指标，它包含两个重要维度：内容表达, 坐标: [41 ... 75], 置信度: 0.9994
   文本: 的流畅度和内容之间的自然过渡。在实际文本中，我们经常可以观察到各种篇, 坐标: [  5 ... 130], 置信度: 0.9999
@@ -141,13 +157,48 @@ Creating model: ('PP-OCRv6_medium_rec', '/home/rk3588/PP-OCRv6/models/official_m
   文本: 排，形成结构完整、逻辑清晰的文本内容。然而，现有的预训练语言模型对这, 坐标: [  4 ... 292], 置信度: 0.9999
   文本: 种显式的篇章结构缺乏建模能力，导致生成的文本往往呈现出"碎片化”特征。, 坐标: [  5 ... 344], 置信度: 0.9686
 
+文件名: c7.png
+采样时间: 0.4609s
+  文本: 吃原始分辨率, 坐标: [153 ...  69], 置信度: 0.9998
+  文本: RKNN为什么不能直接, 坐标: [ 32 ... 146], 置信度: 1.0000
+
 文件名: a9.png
-采样时间: 0.1713s
+采样时间: 0.2101s
   文本: 百度Ai+百度Ai+, 坐标: [ 6 ... 59], 置信度: 0.9818
 
 文件名: b1.png
-采样时间: 0.5009s
+采样时间: 0.5751s
   文本: PaddleOCR3.0, 坐标: [19 ... 75], 置信度: 0.9998
   文本: 文字识别与文档解析开发套件, 坐标: [ 19 ... 135], 置信度: 0.9987
 
-总耗时: 20.0735s，平均一张图采样时间: 1.0037s
+文件名: b10.jpg
+采样时间: 1.9839s
+  文本: 中华人民共和国PEOPLE'SREPUBLIC, 坐标: [19 ... 42], 置信度: 0.9999
+  文本: 护照, 坐标: [69 ... 63], 置信度: 0.9998
+  文本: 类型/Type, 坐标: [199 ...  60], 置信度: 0.9963
+  文本: 国家码/Country Code, 坐标: [291 ...  62], 置信度: 0.9986
+  文本: PASSPORT, 坐标: [71 ... 78], 置信度: 1.0000
+  文本: P, 坐标: [198 ...  76], 置信度: 0.9986
+  文本: CHN, 坐标: [290 ...  79], 置信度: 1.0000
+  文本: PEOP, 坐标: [357 ...  79], 置信度: 0.9944
+  文本: 姓名/Name, 坐标: [200 ...  94], 置信度: 0.9929
+  文本: 冯, 坐标: [201 ... 119], 置信度: 1.0000
+  文本: FENG,, 坐标: [201 ... 135], 置信度: 0.9208
+  文本: 性别/Sex, 坐标: [200 ... 158], 置信度: 0.9418
+  文本: 国籍/Nationalit, 坐标: [262 ... 157], 置信度: 0.9906
+  文本: 女/F, 坐标: [200 ... 179], 置信度: 0.9993
+  文本: 中国/CHINESE, 坐标: [262 ... 176], 置信度: 0.9999
+  文本: 出生地点/Place of birth, 坐标: [197 ... 197], 置信度: 0.9996
+  文本: 广东/GUANGDONG, 坐标: [199 ... 217], 置信度: 0.9998
+  文本: 签发地点/Place of issue, 坐标: [199 ... 235], 置信度: 0.9847
+  文本: 广东/GUANGDONG, 坐标: [199 ... 256], 置信度: 0.9997
+  文本: 签发机关/Authority, 坐标: [197 ... 274], 置信度: 0.9995
+  文本: N, 坐标: [384 ... 274], 置信度: 0.4839
+  文本: 中华人民共和国国家移民管理局, 坐标: [199 ... 293], 置信度: 1.0000
+  文本: National Immigration Administration,PRC, 坐标: [201 ... 305], 置信度: 0.9988
+  文本: 2, 坐标: [358 ... 325], 置信度: 0.1186
+  文本: POCHNFENG<<, 坐标: [ 28 ... 369], 置信度: 0.9978
+  文本: <<<<<<<<, 坐标: [238 ... 368], 置信度: 0.5080
+  文本: EL, 坐标: [ 26 ... 402], 置信度: 1.0000
+
+总耗时: 20.3883s，平均一张图采样时间: 0.7030s
